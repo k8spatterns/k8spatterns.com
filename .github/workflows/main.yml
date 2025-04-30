@@ -13,11 +13,11 @@ jobs:
     - name: Checkout current repository
       uses: actions/checkout@v3
       with:
-        path: workdir/k8spatterns.io
+        path: workdir/k8spatterns.com
 
     - name: Fetch branch gh-pages
       run: git fetch origin gh-pages
-      working-directory: workdir/k8spatterns.io
+      working-directory: workdir/k8spatterns.com
       
     - name: Install Hugo
       run: |
@@ -27,5 +27,5 @@ jobs:
     
     - name: Generate site
       run: ./gen_site.sh
-      working-directory: workdir/k8spatterns.io
+      working-directory: workdir/k8spatterns.com
 
