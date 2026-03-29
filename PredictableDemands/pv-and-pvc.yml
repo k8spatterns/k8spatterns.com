@@ -8,7 +8,7 @@ spec:
     - ReadWriteOnce
   capacity:
     storage: 10Mi
-  # Storageclass is important here otherwise the PVC won't bind
+  # storageClassName must match between PV and PVC
   storageClassName: standard
   hostPath:
     # Mount by Minikube from local directory during 'minikube start'
@@ -22,6 +22,8 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
+  # Must match the storageClassName of the PV
+  storageClassName: standard
   resources:
     requests:
       storage: 10Mi
